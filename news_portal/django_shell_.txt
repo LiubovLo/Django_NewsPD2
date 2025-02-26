@@ -1,0 +1,83 @@
+(venv) PS D:\учеба\IT\Django\News\news_portal> python manage.py shell
+Python 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from news.models import *
+>>> user_1 = User.objects.create_user('Иванов Иван Иванович')
+>>> user_2 = User.objects.create_user('Петров Петр Петрович')
+>>> author_1 = Author.objects.create(author_user=user_1)
+>>> author_2 = Author.objects.create(author_user=user_2)
+>>> user_1.username
+'Иванов Иван Иванович'
+>>> user_2.username
+'Петров Петр Петрович'
+>>> category_1 = Category.objects.create(category_name = 'Politics')
+>>> category_2 = Category.objects.create(category_name = 'Sport')
+>>> category_3 = Category.objects.create(category_name = 'Education')
+>>> category_4 = Category.objects.create(category_name = 'Technology')
+>>> post_1_title = "Donald Trump: the president who would be king"
+>>> post_1_content = "Founding Father George Washington viewed the notion that he should be the US' first monarch 'with abhorrence'.The 47th president, however, seems to have no such reluctance when it comes to having a crown placed on his head."
+>>> post_1 = Post.objects.create(type_post='NW', post_title=post_1_title, post_content=post_1_content, author=author_1)
+>>> post_1.get_type_post_display()
+'Новость'
+>>> post_1.post_category.add(category_1)
+>>> post_2_title = "What is reformer pilates? And is it worth the cost?"
+>>> post_2_content = "Reformer pilates is steadily growing in popularity, with new studios opening regularly in major cities all over the world. \
+... But what exactly is reformer pilates? And how does it compare with regular pilates and other types of exercise? \
+... Classes aren’t cheap so let’s look at the potential benefits and drawbacks to help you decide if it’s right for you."
+>>> post_2 = Post.objects.create(type_post='AR', post_title=post_2_title, post_content=post_2_content, author=author_2)
+>>> post_2.get_type_post_display()
+'Статья'
+>>> post_2.post_category.add(category_2, category_4)
+>>> post_3_title = "10 Benefits Of Reading Aloud"
+>>> post_3_content = "In this article we are going to talk about the 10 Benefits Of Reading Aloud. \
+... There are many things that we don’t know yet, and after learning its benefits and advantages, we will surely be surprised by the way it worked out good for us. \
+... For many people of today’s generation, reading is quite not easy and that do so many people struggle to memorize what they have read. Reading is such an activity which keeps us busy and our brain engaged. "
+>>> post_3 = Post.objects.create(type_post='AR', post_title=post_3_title, post_content=post_3_content, author=author_1)
+>>> post_3.post_category.add(category_3)
+>>> comment_1_post_1 = Comment.objects.create(post=post_1, user=user_1, content="Это первый комментарий к посту 1")
+>>> comment_1_post_2 = Comment.objects.create(post=post_2, user=user_1, content="Это первый комментарий к посту 2")
+>>> comment_1_post_3 = Comment.objects.create(post=post_3, user=user_2, content="Это первый комментарий к посту 3")
+>>> comment_2_post_1 = Comment.objects.create(post=post_1, user=user_1, content="Второй комментарий к посту 1")
+>>> comment_2_post_2 = Comment.objects.create(post=post_2, user=user_2, content="Второй комментарий к посту 2")
+>>> comment_2_post_3 = Comment.objects.create(post=post_3, user=user_2, content="Второй комментарий к посту 3")
+>>> comment_1_post_1.dislike()
+>>> comment_1_post_2.like()
+>>> comment_1_post_3.like()
+>>> comment_1_post_3.like()
+>>> comment_2_post_1.like()
+>>> comment_2_post_1.like()
+>>> comment_2_post_2.dislike()
+>>> comment_2_post_2.dislike()
+>>> comment_2_post_3.like()
+>>> comment_2_post_3.like()
+>>> comment_2_post_3.like()
+>>> post_1.like()
+>>> post_2.like()
+>>> post_2.like()
+>>> post_3.like()
+>>> post_3.like()
+>>> post_3.like()
+>>> author_1.upgrade_rating()
+>>> author_2.upgrade_rating()
+>>> author_1.author_rating
+20
+>>> author_2.author_rating
+8
+>>> Author.objects.all().order_by('-author_rating').values('author_user__username', 'author_rating')[0]
+{'author_user__username': 'Иванов Иван Иванович', 'author_rating': 20}
+>>> best_post = Post.objects.all().order_by('-post_rating')[0]
+>>> best_post
+<Post: Post object (3)>
+>>> Post.objects.all().order_by('-post_rating').values('time_create', 'author__author_user__username', 'post_rating', 'post_title')[0]
+{'time_create': datetime.datetime(2025, 25, 2, 20, 18, 48, 33386, tzinfo=datetime.timezone.utc), 'author__author_user__username': 'Иванов Иван Иванович',
+ 'post_rating': 3, 'post_title': '10 Benefits Of Reading Aloud'}
+>>> best_post.preview()
+'In this article we are going to talk about the 10 Benefits Of Reading Aloud....'
+>>>
+>>> for comment_elem in Comment.objects.filter(post=best_post):
+...     print(comment_elem.time_comment, comment_elem.user.username, comment_elem.rating_comment, comment_elem.content)
+...
+2025-25-02 20:25:44.389218+00:00 Петров Петр Петрович 2 Это первый комментарий к посту 3
+2025-25-02 20:27:49.304716+00:00 Петров Петр Петрович 3 Второй комментарий к посту 3
+>>>
