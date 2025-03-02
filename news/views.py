@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from .models import Post
+from .models import Post, PostCategory
 
 class PostsList(ListView):
     """ Представление всех новостей в виде списка. """

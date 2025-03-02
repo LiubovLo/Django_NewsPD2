@@ -7,16 +7,12 @@ class Author(models.Model):
     author_rating = models.IntegerField(default=0)
 
     def update_rating(self):
-        total_rating = 0
-        for elem_post in Post.objects.filter(author_id=self.pk):
-            total_rating += elem_post.post_rating * 3
-            for elem_comment in Comment.objects.filter(post_id=elem_post):
-                total_rating += elem_comment.rating_comment
-
-        for elem_user_comment in Comment.objects.filter(user_id=self.author_user):
-            total_rating += elem_user_comment.rating_comment
-        self.author_rating = total_rating
+        post_rating = sum(post.rating for post in self.post_set.all()) * 3
+        comment_rating = sum(comment.rating for comment in self.user.comment_set.all())
+        post_comment_rating = sum(comment.rating for post in self.post_set.all() for comment in post.comment_set.all())
+        self.rating = post_rating + comment_rating + post_comment_rating
         self.save()
+
 
 class Category(models.Model):
     category_name = models.CharField(max_length=128, unique=True)
@@ -45,7 +41,7 @@ class Post(models.Model):
         self.save()
 
     def preview(self):
-        return self.text[:123] + '...' if len(self.text) > 123 else self.text
+        return self.post_content[:123] + '...' if len(self.post_content) > 123 else self.post_content
 
 class PostCategory(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
