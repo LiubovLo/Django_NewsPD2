@@ -1,0 +1,50 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+<!-- Название у нас будет products -->
+{% block title %}
+Posts
+{% endblock title %}
+
+<!-- В контенте на странице мы выводим все товары -->
+{% block content %}
+<div class="col-lg-12 text-center">
+    <h1>Все посты</h1>
+    <h3>Всего постов: {{ posts|length }}</h3>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Заголовок</th>
+            <th scope="col">Дата публикации</th>
+            <th scope="col">Текст</th>
+            <th scope="col">Ссылка на статью</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for post in news %}
+        <tr>
+            <th scope="row">{{ post.post_title }}</th>
+            <td>{{ post.time_create }}</td>
+            <td>{{ post.post_content | truncatewords:20 | censor}}</td>
+            <td><a class="btn btn-primary btn-sm" href="/news/{{ post.pk }}">Читать статью</a></td>
+        </tr>
+        {% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if news.has_previous %}
+            <a href="?page=1">&laquo; первая</a>
+            <a href="?page={{ news.previous_page_number }}">предыдущая</a>
+        {% endif %}
+
+        <span class="current">
+            Страница {{ news.number }} из {{ news.paginator.num_pages }}.
+        </span>
+
+        {% if news.has_next %}
+            <a href="?page={{ news.next_page_number }}">следующая</a>
+            <a href="?page={{ news.paginator.num_pages }}">последняя &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+{% endblock %}
