@@ -13,7 +13,7 @@ Post
     <h5 class="card-title">{{ post.post_title }}</h5>
     <h6 class="card-subtitle mb-2 text-muted">Дата публикации: {{ post.time_create }}</h6>
     <p class="card-text">{{ post.post_content|censor }}</p>
-    <a href="/news/" class="card-link">К списку статей...</a>
+    <a href="{% url 'news_list' %}">К списку статей...</a>
   </div>
 </div>
 </div>

@@ -1,0 +1,21 @@
+{% extends 'flatpages/default.html' %}
+{% load custom_filters %}
+
+{% block title %}
+Редактировать новость
+{% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Редактировать новость</h2>
+    <hr>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+        <a href="{% url 'news_detail' object.id %}" class="btn btn-secondary">Отмена</a>
+    </form>
+</div>
+{% endblock content %}

@@ -16,7 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from news.views import PostsList, PostDetail
+from news.views import PostsList, PostDetail, SearchPosts, NewsCreateView, ArticleCreateView, NewsUpdateView, \
+    ArticleUpdateView, PostDeleteView
 
 
 urlpatterns = [
@@ -24,5 +25,14 @@ urlpatterns = [
     path('pages/', include('django.contrib.flatpages.urls')),
     path('news/', PostsList.as_view(), name='news_list'),  # Список новостей
     path('news/<int:pk>/', PostDetail.as_view(), name='news_detail'),  # Детали новости
+    path('search/', SearchPosts.as_view()),
+    path('news/create/', NewsCreateView.as_view(), name='news_create'),
+    path('articles/create', ArticleCreateView.as_view(), name='article_create'),
+    path('news/<int:pk>/edit/', NewsUpdateView.as_view(), name='news_update'),
+    path('articles/<int:pk>/edit', ArticleUpdateView.as_view(), name='article_update'),
+    path('news/<int:pk>/delete/', PostDeleteView.as_view(), name='post_delete'),
+    path('articles/<int:pk>/delete', PostDeleteView.as_view(), name='post_delete'),
+    path('<pk>', PostDetail.as_view(), name='news_detail'),
+    path('search/<pk>', PostDetail.as_view(), name='news_detail'),
 
 ]

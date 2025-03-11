@@ -1,0 +1,26 @@
+{% extends 'flatpages/default.html' %}
+{% load custom_filters %}
+
+{% block title %}
+    Удалить пост
+{% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Удалить пост</h2>
+    <hr>
+    <form action="" method="post">
+        {% csrf_token %}
+        <p>Вы уверены, что хотите удалить этот пост?</p>
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ object.post_title|censor }}</h5>
+                <p class="card-text">{{ object.post_content|truncatewords:30|censor }}</p>
+                <p class="text-muted">Дата: {{ object.time_create|date:"d.m.Y" }}</p>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-danger">Удалить</button>
+        <a href="{% url 'news_detail' object.id %}" class="btn btn-secondary">Отмена</a>
+    </form>
+</div>
+{% endblock content %}

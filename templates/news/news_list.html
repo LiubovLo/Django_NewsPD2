@@ -1,50 +1,59 @@
 {% extends 'flatpages/default.html' %}
-
 {% load custom_filters %}
-<!-- Название у нас будет products -->
+{% load custom_tags %}
+
 {% block title %}
 Posts
 {% endblock title %}
 
-<!-- В контенте на странице мы выводим все товары -->
 {% block content %}
 <div class="col-lg-12 text-center">
     <h1>Все посты</h1>
-    <h3>Всего постов: {{ posts|length }}</h3>
+    <h3>Всего постов: {{ news|length }}</h3>
+
+    {% if news %}
     <table class="table">
         <thead>
-        <tr>
-            <th scope="col">Заголовок</th>
-            <th scope="col">Дата публикации</th>
-            <th scope="col">Текст</th>
-            <th scope="col">Ссылка на статью</th>
-        </tr>
+            <tr>
+                <th scope="col">Заголовок</th>
+                <th scope="col">Дата публикации</th>
+                <th scope="col">Текст</th>
+                <th scope="col">Ссылка на статью</th>
+            </tr>
         </thead>
         <tbody>
-        {% for post in news %}
-        <tr>
-            <th scope="row">{{ post.post_title }}</th>
-            <td>{{ post.time_create }}</td>
-            <td>{{ post.post_content | truncatewords:20 | censor}}</td>
-            <td><a class="btn btn-primary btn-sm" href="/news/{{ post.pk }}">Читать статью</a></td>
-        </tr>
-        {% endfor %}
+            {% for post in news %}
+            <tr>
+                <th scope="row">{{ post.post_title }}</th>
+                <td>{{ post.time_create }}</td>
+                <td>{{ post.post_content | truncatewords:20 | censor}}</td>
+                <td><a class="btn btn-primary btn-sm" href="/news/{{ post.pk }}">Читать статью</a></td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4"><h2>Новостей пока нет!</h2></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
 
-<div class="pagination">
-    <span class="step-links">
-        {% if news.has_previous %}
-            <a href="?page=1">&laquo; первая</a>
-            <a href="?page={{ news.previous_page_number }}">предыдущая</a>
-        {% endif %}
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?{% url_replace page=1 %}">Первая</a>
+                <a href="?{% url_replace page=page_obj.previous_page_number %}">←</a>
+            {% endif %}
 
-        <span class="current">
-            Страница {{ news.number }} из {{ news.paginator.num_pages }}.
+            <span class="current">
+                Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?{% url_replace page=page_obj.next_page_number %}">→</a>
+                <a href="?{% url_replace page=page_obj.paginator.num_pages %}">Последняя</a>
+            {% endif %}
         </span>
-
-        {% if news.has_next %}
-            <a href="?page={{ news.next_page_number }}">следующая</a>
-            <a href="?page={{ news.paginator.num_pages }}">последняя &raquo;</a>
-        {% endif %}
-    </span>
+    </div>
 </div>
 {% endblock %}
