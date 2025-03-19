@@ -27,6 +27,12 @@ Posts
                 <th scope="row">{{ post.post_title }}</th>
                 <td>{{ post.time_create }}</td>
                 <td>{{ post.post_content | truncatewords:20 | censor}}</td>
+                {% if perms.news_portal.change_post %}
+                    <a href="{% url 'news_update' pk=post.pk %}">Edit</a>
+                {% endif %}
+                {% if perms.news_portal.delete_post %}
+                    <a href="{% url 'post_delete' pk=post.pk %}">Delete</a>
+                {% endif %}
                 <td><a class="btn btn-primary btn-sm" href="/news/{{ post.pk }}">Читать статью</a></td>
             </tr>
             {% empty %}
@@ -56,4 +62,16 @@ Posts
         </span>
     </div>
 </div>
-{% endblock %}
+<h3><a href="/news/">Все посты</a></h3>
+ <a href="../news/create/">Добавить новость</a>
+ {% if  not perms.news_portal.add_post %}
+ (недостаточно прав <a href="/accounts/signup">Зарегистрироваться как автор?</a>)
+ {% endif%}
+ <br><br>
+ Текущий пользователь:
+ {% if not user.username %}
+ Нет пользователя
+ {% else %}
+ {{ user.username }}
+ {% endif%}
+{% endblock content%}

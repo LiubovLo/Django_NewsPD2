@@ -23,6 +23,8 @@ from news.views import PostsList, PostDetail, SearchPosts, NewsCreateView, Artic
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('pages/', include('django.contrib.flatpages.urls')),
+    path('accounts/', include('allauth.urls')),
+    path('accounts/', include('accounts.urls')),
     path('news/', PostsList.as_view(), name='news_list'),  # Список новостей
     path('news/<int:pk>/', PostDetail.as_view(), name='news_detail'),  # Детали новости
     path('search/', SearchPosts.as_view()),

@@ -11,8 +11,9 @@ class PostFilter(django_filters.FilterSet):
         label='Название'
     )
 
-    post_category = django_filters.ModelMultipleChoiceFilter(
+    post_category = django_filters.ModelChoiceFilter(
         field_name='post_category',
+        lookup_expr='exact',
         queryset=Category.objects.all(),
         label='Категории'
     )
@@ -31,4 +32,6 @@ class PostFilter(django_filters.FilterSet):
         model = Post
         fields = {
              'post_title': ['icontains'],
+             'post_category': ['exact'],  # Точное совпадение категории
+             'time_create': ['gt'],
          }

@@ -17,4 +17,11 @@ Post
   </div>
 </div>
 </div>
+Текущий пользователь:
+{% if not user.username %}
+Нет пользователя
+{% else %}
+{{ user.username }}
+{% endif%}
+
 {% endblock content %}
