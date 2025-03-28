@@ -1,7 +1,9 @@
 from django.contrib.auth.models import User
 from django.db import models
 from django.db.models import Sum
+from django.urls import reverse
 
+from django.core.mail import send_mail
 class Author(models.Model):
     author_user = models.OneToOneField(User, on_delete=models.CASCADE)
     author_rating = models.IntegerField(default=0)
@@ -43,8 +45,11 @@ class Post(models.Model):
     def preview(self):
         return self.post_content[:123] + '...' if len(self.post_content) > 123 else self.post_content
 
+    def get_absolute_url(self):
+        return reverse('post_detail', args=[str(self.pk)])
+
 class PostCategory(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='categories')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
 
@@ -62,3 +67,18 @@ class Comment(models.Model):
     def dislike(self):
         self.rating_comment -= 1
         self.save()
+
+
+class Subscriber(models.Model):
+    user = models.ForeignKey(
+        to=User,
+        on_delete=models.CASCADE,
+        related_name='subscriptions',
+    )
+    subscribed_categories = models.ForeignKey(
+        to=Category,
+        on_delete=models.CASCADE,
+        related_name='subscribers'
+    )
+    def __str__(self):
+        return self.email

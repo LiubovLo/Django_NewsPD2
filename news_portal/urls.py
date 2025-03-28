@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from news.views import PostsList, PostDetail, SearchPosts, NewsCreateView, ArticleCreateView, NewsUpdateView, \
-    ArticleUpdateView, PostDeleteView
+    ArticleUpdateView, PostDeleteView, subscriptions
 
 
 urlpatterns = [
@@ -36,5 +36,6 @@ urlpatterns = [
     path('articles/<int:pk>/delete', PostDeleteView.as_view(), name='post_delete'),
     path('<pk>', PostDetail.as_view(), name='news_detail'),
     path('search/<pk>', PostDetail.as_view(), name='news_detail'),
+    path('subscriptions/', subscriptions, name='subscriptions'),
 
 ]

@@ -24,6 +24,12 @@ class SignUpForm(UserCreationForm):
         user = super(SignUpForm, self).save()
         authors = Group.objects.get(name='authors')
         user.groups.add(authors)
+        send_mail(
+            subject='Добро пожаловать на наш новостной портал!',
+            message=f'{user.username}, Вы успешно зарегистрировались как автор!',
+            from_email=None,
+            recipient_list=[user.email],
+        )
         if commit:
             user.save()
 

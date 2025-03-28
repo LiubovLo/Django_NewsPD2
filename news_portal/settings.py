@@ -51,10 +51,12 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.yandex',
+    'django_apscheduler',
 
 ]
 
 SITE_ID = 1
+SITE_URL = 'http://127.0.0.1:8000'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -159,6 +161,24 @@ ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = "lubov.shcheglova@yandex.ru"
+EMAIL_HOST_PASSWORD = "zxcasdqwerfv"
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+
+DEFAULT_FROM_EMAIL = "lubov.shcheglova@yandex.ru"
+
+SERVER_EMAIL = "lubov.shcheglova@yandex.ru"
+MANAGERS = (
+    ('liubov', 'lubov.shcheglova@yandex.ru'),
+)
+ADMINS = [
+
+]
 
 STATICFILES_DIRS = [
     BASE_DIR / "static"

@@ -5,6 +5,11 @@ from .filters import PostFilter
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.urls import reverse_lazy
 from .forms import PostForm
+from django.contrib.auth.decorators import login_required
+from django.db.models import Exists, OuterRef
+from django.views.decorators.csrf import csrf_protect
+from .models import Subscriber, Category
+from django.shortcuts import get_object_or_404
 
 class PostsList(ListView):
     """ Представление всех новостей в виде списка. """
@@ -106,5 +111,34 @@ class PostDeleteView(PermissionRequiredMixin, LoginRequiredMixin, DeleteView):
     model = Post
     template_name = 'news/post_delete.html'
     success_url = reverse_lazy('news_list')
+
+@login_required
+@csrf_protect
+def subscriptions(request):
+    if request.method == 'POST':
+        category_id = request.POST.get('category_id')
+        category = get_object_or_404(Category, id=category_id)
+        user = request.user
+        subscriber, created = Subscriber.objects.get_or_create(user=user, email=user.email)
+
+        action = request.POST.get('action')
+        if action == 'subscribe':
+            Subscriber.subscribed_categories.add(category)
+        elif action == 'unsubscribe':
+            Subscriber.subscribed_categories.remove(category)
+
+    categories_with_subscriptions = Category.objects.annotate(
+        user_subscribed=Exists(
+            Subscriber.objects.filter(
+                user=request.user,
+                category=OuterRef('pk'),
+            )
+        )
+    ).order_by('name')
+    return render(
+        request,
+        'subscriptions.html',
+        {'categories': categories_with_subscriptions},
+    )
 # Create your views here.
 
