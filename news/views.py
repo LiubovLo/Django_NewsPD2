@@ -10,6 +10,7 @@ from django.db.models import Exists, OuterRef
 from django.views.decorators.csrf import csrf_protect
 from .models import Subscriber, Category
 from django.shortcuts import get_object_or_404
+from .tasks import notify_about_new_post
 
 class PostsList(ListView):
     """ Представление всех новостей в виде списка. """
@@ -61,10 +62,26 @@ class NewsCreateView(PermissionRequiredMixin, LoginRequiredMixin, CreateView):
     template_name = 'news/news_create.html'
 
     def form_valid(self, form):
-        news = form.save(commit=False)
-        news.type_post = 'NW'
-        return super().form_valid(form)
+        post_title = form.cleaned_data['post_title']
+        post_content = form.cleaned_data['post_content']
+        author = form.cleaned_data['author']
+        categories = form.cleaned_data['post_category']
+        type_post = 'NW'
+        post_new = Post.objects.create(type_post=type_post,
+                                       post_title=post_title,
+                                       post_content=post_content,
+                                       author=author
+                                       )
+        post_new.save()
 
+        categories_list_id = Category.objects.filter(pk__in=categories).values('id')
+        for category_id in categories_list_id:
+            post_new.post_category.add(category_id['id'])  # срабатывает m2m_changed
+        post_new.save()
+        notify_about_new_post.apply_async([post_new.pk], countdown=1)
+
+        if form.is_valid():
+            return HttpResponseRedirect(f'/news/search/{post_new.pk}')
 
 class ArticleCreateView(PermissionRequiredMixin, LoginRequiredMixin, CreateView):
     permission_required = 'news.add_post'
@@ -74,9 +91,26 @@ class ArticleCreateView(PermissionRequiredMixin, LoginRequiredMixin, CreateView)
     template_name = 'news/article_create.html'
 
     def form_valid(self, form):
-        news = form.save(commit=False)
-        news.type_post = 'AR'
-        return super().form_valid(form)
+        post_title = form.cleaned_data['post_title']
+        post_content = form.cleaned_data['post_content']
+        author = form.cleaned_data['author']
+        categories = form.cleaned_data['post_category']
+        type_post = 'AR'
+        post_new = Post.objects.create(type_post=type_post,
+                                       post_title=post_title,
+                                       post_content=post_content,
+                                       author=author
+                                       )
+        post_new.save()
+
+        categories_list_id = Category.objects.filter(pk__in=categories).values('id')
+        for category_id in categories_list_id:
+            post_new.post_category.add(category_id['id'])  # срабатывает m2m_changed
+        post_new.save()
+        notify_about_new_post.apply_async([post_new.pk], countdown=1)
+
+        if form.is_valid():
+            return HttpResponseRedirect(f'/news/{post_new.pk}')
 
 
 class NewsUpdateView(PermissionRequiredMixin, LoginRequiredMixin, UpdateView):
@@ -87,9 +121,31 @@ class NewsUpdateView(PermissionRequiredMixin, LoginRequiredMixin, UpdateView):
     template_name = 'news/news_update.html'
 
     def form_valid(self, form):
-        news = form.save(commit=False)
-        news.type_post = 'NW'
-        return super().form_valid(form)
+        post_title = form.cleaned_data['post_title']
+        post_content = form.cleaned_data['post_content']
+        author = form.cleaned_data['author']
+        categories = form.cleaned_data['post_category']
+        type_post = 'NW'
+        post_updated = self.object
+        post_updated.type_post = type_post
+        post_updated.post_title = post_title
+        post_updated.post_content = post_content
+        post_updated.author = author
+        post_updated.save()
+
+        category_list = Category.objects.filter(pk__in=categories)
+
+        PostCategory.objects.filter(post=post_updated).delete()  # удаляем все предыдущие категории
+
+        # в цикле добавляем новые категории, при этом m2m_changed не срабатывает, т.к. поле manytomany
+        # (post_updated.post_category) не затрагивается.
+
+        for category in category_list:
+            post_category = PostCategory.objects.create(post=post_updated, category=category)
+            post_category.save()
+
+        if form.is_valid():
+            return HttpResponseRedirect(f'/news/search/{post_updated.pk}')
 
 
 class ArticleUpdateView(PermissionRequiredMixin, LoginRequiredMixin, UpdateView):
@@ -100,9 +156,31 @@ class ArticleUpdateView(PermissionRequiredMixin, LoginRequiredMixin, UpdateView)
     template_name = 'news/article_update.html'
 
     def form_valid(self, form):
-        news = form.save(commit=False)
-        news.type_post = 'AR'
-        return super().form_valid(form)
+        post_title = form.cleaned_data['post_title']
+        post_content = form.cleaned_data['post_content']
+        author = form.cleaned_data['author']
+        categories = form.cleaned_data['post_category']
+        type_post = 'AR'
+        post_updated = self.object
+        post_updated.type_post = type_post
+        post_updated.post_title = post_title
+        post_updated.post_content = post_content
+        post_updated.author = author
+        post_updated.save()
+
+        category_list = Category.objects.filter(pk__in=categories)
+
+        PostCategory.objects.filter(post=post_updated).delete()           # удаляем все предыдущие категории
+
+        # в цикле добавляем новые категории, при этом m2m_changed не срабатывает, т.к. поле manytomany
+        # (post_updated.post_category) не затрагивается.
+
+        for category in category_list:
+            post_category = PostCategory.objects.create(post=post_updated, category=category)
+            post_category.save()
+
+        if form.is_valid():
+            return HttpResponseRedirect(f'/news/{post_updated.pk}')
 
 
 class PostDeleteView(PermissionRequiredMixin, LoginRequiredMixin, DeleteView):
