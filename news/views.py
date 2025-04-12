@@ -11,7 +11,7 @@ from django.views.decorators.csrf import csrf_protect
 from .models import Subscriber, Category
 from django.shortcuts import get_object_or_404
 from .tasks import notify_about_new_post
-
+from django.core.cache import cache
 class PostsList(ListView):
     """ Представление всех новостей в виде списка. """
     paginate_by = 10
@@ -35,6 +35,14 @@ class PostDetail(DetailView):
     model = Post
     template_name = 'news/news_detail.html'  # Шаблон для отображения
     context_object_name = 'post'  # Имя переменной в шаблоне
+
+    def get_object(self, *args, **kwargs):
+        obj = cache.get(f'post-{self.kwargs["pk"]}', None)
+        if not obj:
+            obj = super().get_object(queryset=self.get_queryset())
+            cache.set(f'post-{self.kwargs["pk"]}', obj)
+
+        return obj
 
 class SearchPosts(ListView):
     model = Post

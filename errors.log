@@ -1,0 +1,1544 @@
+ERROR 2025-04-12 23:48:07,682 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D8FD9F40>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:48:08,073 "GET /favicon.ico HTTP/1.1" 500 148472
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:48:13,989 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D90B9A80>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:48:14,036 "GET /favicon.ico HTTP/1.1" 500 148477
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:48:15,751 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D8DC55C0>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:48:15,776 "GET /favicon.ico HTTP/1.1" 500 148477
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:48:17,360 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D91847C0>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:48:17,392 "GET /favicon.ico HTTP/1.1" 500 148497
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:48:19,948 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D90F0BC0>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:48:19,979 "GET /favicon.ico HTTP/1.1" 500 148619
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:48:25,190 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D8FF80C0>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:48:25,214 "GET /favicon.ico HTTP/1.1" 500 148630
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:48:28,116 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D903A380>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:48:28,143 "GET /favicon.ico HTTP/1.1" 500 148647
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:48:34,630 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D9426D80>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:48:34,655 "GET /favicon.ico HTTP/1.1" 500 148633
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:48:36,744 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D902F900>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:48:36,773 "GET /favicon.ico HTTP/1.1" 500 148648
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:48:37,710 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D9424780>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:48:37,765 "GET /favicon.ico HTTP/1.1" 500 148657
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:48:39,157 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D8FC7E40>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:48:39,181 "GET /favicon.ico HTTP/1.1" 500 148629
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:48:43,040 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D9451FC0>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:48:43,070 "GET /favicon.ico HTTP/1.1" 500 148630
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:48:44,282 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D8FE1C80>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:48:44,310 "GET /favicon.ico HTTP/1.1" 500 148640
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:49:13,557 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D9414500>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:49:13,584 "GET /favicon.ico HTTP/1.1" 500 148620
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:49:26,205 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D90BAF40>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:49:26,232 "GET /favicon.ico HTTP/1.1" 500 148620
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:50:08,918 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D90BA5C0>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:50:08,960 "GET /favicon.ico HTTP/1.1" 500 148619
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:50:11,236 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D9480380>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:50:11,267 "GET /favicon.ico HTTP/1.1" 500 148485
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:50:12,809 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D90DDB40>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:50:12,845 "GET /favicon.ico HTTP/1.1" 500 148497
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:50:22,009 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D94959C0>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:50:22,036 "GET /favicon.ico HTTP/1.1" 500 148497
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:50:40,500 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D9492E80>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:50:40,527 "GET /favicon.ico HTTP/1.1" 500 148619
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:50:42,373 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D942BC00>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:50:42,401 "GET /favicon.ico HTTP/1.1" 500 148613
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:50:43,945 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D947DF80>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:50:43,970 "GET /favicon.ico HTTP/1.1" 500 148619
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:50:47,680 Internal Server Error: /admin/news/subscriber/1/change/
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'django.db.utils.OperationalError'>, OperationalError('no such column: news_subscriber.subscribed_categories_id'), <traceback object at 0x00000185D946B940>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such column: news_subscriber.subscribed_categories_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\contrib\admin\options.py", line 1889, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\contrib\admin\options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\contrib\admin\options.py", line 1767, in _changeform_view
+    obj = self.get_object(request, unquote(object_id), to_field)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\contrib\admin\options.py", line 866, in get_object
+    return queryset.get(**{field.name: object_id})
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 633, in get
+    num = len(clone)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 380, in __len__
+    self._fetch_all()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such column: news_subscriber.subscribed_categories_id
+ERROR 2025-04-12 23:50:47,707 "GET /admin/news/subscriber/1/change/ HTTP/1.1" 500 182249
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:50:47,910 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D9447A00>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:50:47,963 "GET /favicon.ico HTTP/1.1" 500 148644
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:50:49,815 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D911F780>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:50:49,846 "GET /favicon.ico HTTP/1.1" 500 148619
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:50:52,415 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D911BBC0>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:50:52,463 "GET /favicon.ico HTTP/1.1" 500 148638
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:51:13,562 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D9259D00>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:51:13,600 "GET /favicon.ico HTTP/1.1" 500 148485
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:51:15,178 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D9005F00>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:51:15,204 "GET /favicon.ico HTTP/1.1" 500 148497
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:51:26,342 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185DA542D80>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:51:26,368 "GET /favicon.ico HTTP/1.1" 500 148497
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None
+ERROR 2025-04-12 23:51:31,587 Internal Server Error: /favicon.ico
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\utils\log.py
+(<class 'ValueError'>, ValueError("Field 'id' expected a number but got 'favicon.ico'."), <traceback object at 0x00000185D9019800>)
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'favicon.ico'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 108, in get
+    self.object = self.get_object()
+  File "D:\учеба\IT\Django\News\news_portal\news\views.py", line 42, in get_object
+    obj = super().get_object(queryset=self.get_queryset())
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\views\generic\detail.py", line 37, in get_object
+    queryset = queryset.filter(pk=pk)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\sql\query.py", line 1319, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\учеба\IT\Django\News\venv\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'favicon.ico'.
+ERROR 2025-04-12 23:51:31,613 "GET /favicon.ico HTTP/1.1" 500 148619
+D:\учеба\IT\Django\News\venv\lib\site-packages\django\core\servers\basehttp.py
+None

@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from news.views import PostsList, PostDetail, SearchPosts, NewsCreateView, ArticleCreateView, NewsUpdateView, \
     ArticleUpdateView, PostDeleteView, subscriptions
+from django.views.decorators.cache import cache_page
 
 
 urlpatterns = [
